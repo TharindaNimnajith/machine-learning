@@ -39,3 +39,9 @@ plt.savefig('cases_deaths_per_month_horizontal.png')
 
 # df[df['month'] == 6]['cases'].plot(kind='box')
 # plt.savefig('boxplot.png')
+#
+# df[df['month'] == 6]['cases'].plot(kind='hist')
+# plt.savefig('histogram_1.png')
+#
+# df[df['month'] == 6]['cases'].plot(kind='hist', bins=10)
+# plt.savefig('histogram_2.png')
