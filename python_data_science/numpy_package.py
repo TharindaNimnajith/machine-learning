@@ -5,6 +5,10 @@ import numpy as np
 # NumPy arrays are faster and more compact than lists.
 # NumPy arrays are homogeneous.
 # They  can contain only a single data type, while lists can contain multiple different types of data.
+help(np)
+print(dir(np))
+print(np)
+
 num_list = [18, 24, 67, 55, 42, 14, 19, 26, 33]
 np_array = np.array(num_list)
 print(np_array[3])
