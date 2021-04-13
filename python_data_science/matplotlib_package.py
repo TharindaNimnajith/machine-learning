@@ -55,3 +55,10 @@ plt.savefig('./plots/scatter.png')
 
 df.groupby('month')['cases'].sum().plot(kind='pie')
 plt.savefig('./plots/pie.png')
+
+df = df[df['month'] == 6]
+df[['cases', 'deaths']].plot(kind='line', legend=True, stacked=False, color=['#1970E7', '#E73E19'])
+plt.xlabel('Days in June')
+plt.ylabel('Number')
+plt.suptitle('COVID-19 in June')
+plt.savefig('./plots/legend.png')
