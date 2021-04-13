@@ -69,3 +69,35 @@ print(type(df[(df['ages'] > 18) & (df['heights'] > 180)]))
 
 print(df[(df['ages'] > 18) | (df['heights'] > 180)])
 print(type(df[(df['ages'] > 18) | (df['heights'] > 180)]))
+
+# df = pd.read_csv('https://www.sololearn.com/uploads/ca-covid.csv')
+df = pd.read_csv('./ca-covid.csv')
+
+print(df.head())
+print(df.tail())
+
+print(df.head(10))
+print(df.tail(10))
+
+df.info()
+
+df['month'] = pd.to_datetime(df['date'], format='%d.%m.%y').dt.month_name()
+print(df.head())
+
+df['total'] = df['cases'] + df['deaths']
+print(df.head())
+
+df.set_index('date', inplace=True)
+print(df.head())
+
+df.drop('state', axis=1, inplace=True)
+print(df.head())
+
+print(df.describe())
+print(df['cases'].describe())
+print(df['cases'].count())
+print(df['cases'].mean())
+print(df['cases'].std())
+print(df['cases'].min())
+print(df['cases'].max())
+print(df['cases'].var())
