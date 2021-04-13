@@ -16,7 +16,25 @@ df.drop('state', axis=1, inplace=True)
 df['date'] = pd.to_datetime(df['date'], format='%d.%m.%y')
 df['month'] = df['date'].dt.month
 df.set_index('date', inplace=True)
+
 df[df['month'] == 12]['cases'].plot()
 plt.savefig('cases.png')
-df[df['month'] == 12]['cases', 'deaths'].plot()
+
+(df[df['month'] == 12][['cases', 'deaths']]).plot()
 plt.savefig('cases_deaths.png')
+
+(df.groupby('month')['cases'].sum()).plot(kind='bar')
+plt.savefig('cases_per_month.png')
+
+(df.groupby('month')['deaths'].sum()).plot(kind='bar')
+plt.savefig('deaths_per_month.png')
+
+df = df.groupby('month')[['cases', 'deaths']].sum()
+df.plot(kind='bar', stacked=True)
+plt.savefig('cases_deaths_per_month.png')
+
+df = df.groupby('month')[['cases', 'deaths']].sum()
+df.plot(kind='barh', stacked=True)
+plt.savefig('cases_deaths_per_month_horizontal.png')
+
+
