@@ -87,6 +87,17 @@ print(df.head())
 df['total'] = df['cases'] + df['deaths']
 print(df.head())
 
+df['ratio'] = df['deaths'] / df['cases']
+df['ratio'].fillna(0, inplace=True)
+print(df.head())
+
+max_ratio = df[df['ratio'] == df['ratio'].max()]
+print(max_ratio)
+max_ratio_date = max_ratio['date']
+print(max_ratio_date)
+print(max_ratio_date.values)
+print(max_ratio_date.values[0])
+
 df.set_index('date', inplace=True)
 print(df.head())
 
@@ -101,3 +112,8 @@ print(df['cases'].std())
 print(df['cases'].min())
 print(df['cases'].max())
 print(df['cases'].var())
+print(df['cases'].sum())
+
+print(df['month'].value_counts())
+
+print(df.groupby('month')['cases'].sum())
