@@ -20,13 +20,13 @@ df.set_index('date', inplace=True)
 df[df['month'] == 12]['cases'].plot()
 plt.savefig('cases.png')
 
-(df[df['month'] == 12][['cases', 'deaths']]).plot()
+df[df['month'] == 12][['cases', 'deaths']].plot()
 plt.savefig('cases_deaths.png')
 
-(df.groupby('month')['cases'].sum()).plot(kind='bar')
+df.groupby('month')['cases'].sum().plot(kind='bar')
 plt.savefig('cases_per_month.png')
 
-(df.groupby('month')['deaths'].sum()).plot(kind='bar')
+df.groupby('month')['deaths'].sum().plot(kind='bar')
 plt.savefig('deaths_per_month.png')
 
 df = df.groupby('month')[['cases', 'deaths']].sum()
@@ -37,4 +37,5 @@ df = df.groupby('month')[['cases', 'deaths']].sum()
 df.plot(kind='barh', stacked=True)
 plt.savefig('cases_deaths_per_month_horizontal.png')
 
-
+# df[df['month'] == 6]['cases'].plot(kind='box')
+# plt.savefig('boxplot.png')
