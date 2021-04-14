@@ -115,3 +115,45 @@ height_age_arr = np.concatenate((heights_arr, ages_arr), axis=0)
 print(height_age_arr)
 print(height_age_arr.shape)
 print(height_age_arr[:, :3])
+
+heights_arr = np.array(heights)
+ages_arr = np.array(ages)
+
+heights_arr = heights_arr.reshape((45, 1))
+ages_arr = ages_arr.reshape((-1, 1))
+
+height_age_arr = np.hstack((heights_arr, ages_arr))
+print(height_age_arr[:, 0] * 0.0328084)
+
+print(height_age_arr.sum())
+print(height_age_arr.sum(axis=0))
+
+print(height_age_arr.min(initial=None))
+print(height_age_arr.min(initial=None, axis=0))
+
+print(height_age_arr.max(initial=None))
+print(height_age_arr.max(initial=None, axis=0))
+
+print(height_age_arr.mean())
+print(height_age_arr.mean(axis=0))
+
+print(height_age_arr[:, 1])
+print(height_age_arr[:, 1] < 55)
+print(height_age_arr[:, 1] == 51)
+print((height_age_arr[:, 1] == 51).sum())
+
+mask = height_age_arr[:, 1] == 51
+print(mask.sum())
+
+other = height_age_arr[mask,]
+print(other)
+print(other.shape)
+
+mask = (height_age_arr[:, 0] >= 182) & (height_age_arr[:, 1] <= 50)
+print(height_age_arr[mask,])
+
+test_input = '2 2\n1.5 1\n2 2.9'
+n = [float(x) for x in test_input.split()]
+arr = np.array(n[2:])
+arr = arr.reshape((int(n[0]), int(n[1])))
+print(arr.mean(axis=1))
