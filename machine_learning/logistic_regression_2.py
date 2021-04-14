@@ -38,3 +38,9 @@ print(model.coef_[0, 3])  # -0.38746592
 print(model.coef_[0, 4])  # 0.09619824
 print(model.coef_[0, 5])  # 0.00297188
 print(model.intercept_[0])  # 5.08856788
+
+y_pred = model.predict(X)
+print((y == y_pred).sum())
+print(y.shape[0])
+print((y == y_pred).sum() / y.shape[0])
+print(model.score(X, y))
