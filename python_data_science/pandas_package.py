@@ -71,7 +71,7 @@ print(df[(df['ages'] > 18) | (df['heights'] > 180)])
 print(type(df[(df['ages'] > 18) | (df['heights'] > 180)]))
 
 # df = pd.read_csv('https://www.sololearn.com/uploads/ca-covid.csv')
-df = pd.read_csv('./ca-covid.csv')
+df = pd.read_csv('./csv/ca-covid.csv')
 
 print(df.head())
 print(df.tail())

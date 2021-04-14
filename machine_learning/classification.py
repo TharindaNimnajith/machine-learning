@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df = pd.read_csv('./titanic.csv')
+df = pd.read_csv('./csv/titanic.csv')
 plt.scatter(df['Fare'], df['Age'], c=df['Survived'])
 plt.xlabel('Fare')
 plt.ylabel('Age')
