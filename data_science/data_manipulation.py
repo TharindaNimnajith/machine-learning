@@ -157,3 +157,15 @@ n = [float(x) for x in test_input.split()]
 arr = np.array(n[2:])
 arr = arr.reshape((int(n[0]), int(n[1])))
 print(arr.mean(axis=1))
+
+# import numpy as np
+#
+# contents = []
+#
+# while True:
+#     try:
+#         contents.append(input().strip().split())
+#     except EOFError:
+#         break
+#
+# print(np.array(contents[1:]).astype(np.float).mean(axis=1))
