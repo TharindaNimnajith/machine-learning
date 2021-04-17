@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # df = pd.read_csv('https://sololearn.com/uploads/files/titanic.csv')
-df = pd.read_csv('./csv/titanic.csv')
+df = pd.read_csv('csv_files/titanic.csv')
 print(df.head())
 
 df['male'] = df['Sex'] == 'male'
