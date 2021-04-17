@@ -14,9 +14,9 @@ model.fit(X, y)
 
 y_pred = model.predict(X)
 
-print('accuracy:', accuracy_score(y, y_pred))
-print('precision:', precision_score(y, y_pred))
-print('recall:', recall_score(y, y_pred))
-print('f1 score:', f1_score(y, y_pred))
+print('Accuracy:', accuracy_score(y, y_pred))
+print('Precision:', precision_score(y, y_pred))
+print('Recall:', recall_score(y, y_pred))
+print('F1 Score:', f1_score(y, y_pred))
 
 print(confusion_matrix(y, y_pred))
