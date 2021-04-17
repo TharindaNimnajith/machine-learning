@@ -6,7 +6,7 @@ plt.scatter(df['Fare'], df['Age'], c=df['Survived'])
 plt.xlabel('Fare')
 plt.ylabel('Age')
 plt.plot([30, 110], [0, 80])
-plt.savefig('./plots/titanic_fare_age.png')
+plt.savefig('plots/titanic_fare_age.png')
 plt.show()
 
 df['male'] = df['Sex'] == 'male'

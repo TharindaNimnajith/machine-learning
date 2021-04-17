@@ -13,7 +13,7 @@ model = LogisticRegression()
 model.fit(X, y)
 
 # save the model to disk
-filename = './models/logistic_regression_1.sav'
+filename = 'models/logistic_regression_1.sav'
 pickle.dump(model, open(filename, 'wb'))
 
 # load the model from disk
@@ -35,5 +35,5 @@ plt.xlabel('Fare')
 plt.ylabel('Age')
 plt.scatter(df['Fare'], df['Age'], c=df['Survived'])
 plt.grid()
-plt.savefig('./plots/logistic_regression_1.png')
+plt.savefig('plots/logistic_regression_1.png')
 plt.show()
