@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+plt.ion()
+ax1 = plt.subplot(211)
+plt.title('test', fontsize=8)
+plt.xlim(-1700, 1700)
+plt.ylabel('x-axis')
+plt.xlabel('y-axis')
+plt.grid()
+plt.savefig('plots/stackoverflow.png')
+# plt.draw()
+# plt.pause(1)
+# plt.show()
+# plt.clf()
