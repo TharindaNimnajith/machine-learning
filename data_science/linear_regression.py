@@ -8,8 +8,7 @@ from sklearn.model_selection import train_test_split
 boston_dataset = load_boston()
 print(type(boston_dataset))
 
-boston = pd.DataFrame(boston_dataset.data,
-                      columns=boston_dataset.feature_names)
+boston = pd.DataFrame(boston_dataset.data, columns=boston_dataset.feature_names)
 
 boston['MEDV'] = boston_dataset.target
 
