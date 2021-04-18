@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from sklearn.datasets import load_boston
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
 boston_dataset = load_boston()
 print(type(boston_dataset))
@@ -45,3 +48,26 @@ print(X.shape)
 
 Y = boston['MEDV']
 print(Y.shape)
+
+model = LinearRegression()
+print(model)
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=1)
+
+print(X_train.shape)
+print(Y_train.shape)
+print(X_test.shape)
+print(Y_test.shape)
+
+model.fit(X_train, Y_train)
+
+print(model.intercept_.round(2))
+print(model.coef_.round(2))
+
+new_RM = np.array([6.5]).reshape(-1, 1)
+print(model.predict(new_RM))
+print(model.intercept_ + model.coef_ * 6.5)
+
+y_test_predicted = model.predict(X_test)
+print(y_test_predicted.shape)
+print(type(y_test_predicted))
