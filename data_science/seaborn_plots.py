@@ -12,3 +12,7 @@ plt.show()
 sns.pairplot(iris)
 plt.savefig('plots/sns_plots_2.png')
 plt.show()
+
+sns.jointplot(iris['sepal_len'], iris['sepal_wd'], hue=iris['species'])
+plt.savefig('plots/sns_plots_3.png')
+plt.show()
