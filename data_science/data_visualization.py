@@ -92,3 +92,13 @@ plt.savefig('plots/presidents_scatter_v2.png')
 # plt.pause(1)
 # plt.show()
 # plt.clf()
+
+presidents_df.plot(kind='scatter',
+                   x='height',
+                   y='age',
+                   title='U.S. presidents')
+plt.savefig('plots/pd_plot.png')
+# plt.draw()
+# plt.pause(1)
+# plt.show()
+# plt.clf()
