@@ -75,3 +75,8 @@ new_data = np.array([[3.76, 1.20]])
 print(new_data)
 
 print(knn_final.predict(np.array(new_data)))
+print(knn_final.predict(new_data))
+
+new_data = np.array([[3.76, 1.2], [5.25, 1.2], [1.58, 1.2]])
+print(knn_final.predict(new_data))
+print(knn_final.predict_proba(new_data))
