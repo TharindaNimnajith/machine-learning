@@ -48,14 +48,30 @@ print(cross_validation_scores)
 print(cross_validation_scores.mean())
 
 knn2 = KNeighborsClassifier()
+
 param_grid = {
     'n_neighbors': np.arange(2, 10)
 }
+
 knn_gscv = GridSearchCV(knn2, param_grid, cv=5)
 knn_gscv.fit(X, y)
+
 print(knn_gscv.best_params_)
 print(knn_gscv.best_score_)
+
 knn_final = KNeighborsClassifier(n_neighbors=knn_gscv.best_params_['n_neighbors'])
 knn_final.fit(X, y)
+
 y_pred = knn_final.predict(X)
 print(knn_final.score(X, y))
+
+new_data = np.array([3.76, 1.20])
+print(new_data)
+
+new_data = new_data.reshape(1, -1)
+print(new_data)
+
+new_data = np.array([[3.76, 1.20]])
+print(new_data)
+
+print(knn_final.predict(np.array(new_data)))
