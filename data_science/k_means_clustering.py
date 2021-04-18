@@ -55,3 +55,10 @@ plt.xlabel('Number of clusters')
 plt.ylabel('Inertia')
 plt.savefig('plots/inertia.png')
 plt.show()
+
+k_opt = 3
+kmeans = KMeans(k_opt)
+kmeans.fit(X_scaled)
+
+y_pred = kmeans.predict(X_scaled)
+print(y_pred)
