@@ -22,3 +22,26 @@ print(boston.describe(percentiles=[0.25, 0.75]).round(2))
 boston.hist(column='CHAS')
 plt.savefig('plots/boston_1.png')
 # plt.show()
+
+corr_matrix = boston.corr().round(2)
+print(corr_matrix)
+
+boston.plot(kind='scatter',
+            x='RM',
+            y='MEDV',
+            figsize=(8, 6))
+plt.savefig('plots/scatter_boston_1.png')
+# plt.show()
+
+boston.plot(kind='scatter',
+            x='LSTAT',
+            y='MEDV',
+            figsize=(8, 6))
+plt.savefig('plots/scatter_boston_2.png')
+# plt.show()
+
+X = boston[['RM']]
+print(X.shape)
+
+Y = boston['MEDV']
+print(Y.shape)
