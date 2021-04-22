@@ -90,4 +90,11 @@ dt.fit(X, y)
 
 dot_file = export_graphviz(dt, feature_names=feature_names)
 graph = graphviz.Source(dot_file)
-graph.render(filename='plots/tree', format='png', cleanup=True)
+graph.render(filename='plots/decision_tree_1', format='png', cleanup=True)
+
+dt1 = DecisionTreeClassifier(max_depth=3, min_samples_leaf=2, max_leaf_nodes=10)
+dt1.fit(X, y)
+
+dot_file = export_graphviz(dt1, feature_names=feature_names)
+graph = graphviz.Source(dot_file)
+graph.render(filename='plots/decision_tree_2', format='png', cleanup=True)
