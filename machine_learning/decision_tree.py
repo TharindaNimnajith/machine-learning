@@ -5,8 +5,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_score, recall_score, accuracy_score
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
-from IPython.display import Image
-
 
 df = pd.read_csv('csv_files/titanic.csv')
 
