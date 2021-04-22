@@ -69,3 +69,11 @@ plt.show()
 
 rf3 = RandomForestClassifier(n_estimators=10)
 rf3.fit(X, y)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=101)
+
+rf4 = RandomForestClassifier(n_estimators=10, random_state=111)
+rf4.fit(X_train, y_train)
+
+ft_imp = pd.Series(rf4.feature_importances_, index=cancer_data.feature_names).sort_values(ascending=False)
+print(ft_imp.head(10))
