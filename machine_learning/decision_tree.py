@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_score, recall_score, accuracy_score
-from sklearn.model_selection import train_test_split, KFold
+from sklearn.model_selection import train_test_split, KFold, GridSearchCV
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
 df = pd.read_csv('csv_files/titanic.csv')
@@ -98,3 +98,17 @@ dt1.fit(X, y)
 dot_file = export_graphviz(dt1, feature_names=feature_names)
 graph = graphviz.Source(dot_file)
 graph.render(filename='plots/decision_tree_2', format='png', cleanup=True)
+
+param_grid = {
+    'max_depth': [5, 15, 25],
+    'min_samples_leaf': [1, 3],
+    'max_leaf_nodes': [10, 20, 35, 50]
+}
+
+dt2 = DecisionTreeClassifier()
+
+gs = GridSearchCV(dt2, param_grid, scoring='f1', cv=5)
+gs.fit(X, y)
+
+print('Best params:', gs.best_params_)
+print('Best score:', gs.best_score_)
